@@ -1,12 +1,14 @@
 # Django Project Setup Guide
 
+
+[Deployed link](https://todoreminder.onrender.com/)
 ## Steps to Run and Test the Project
 
 ### 1. Clone the Project Repository
 * Clone the repository from GitHub:
   ```bash
-  git clone https://github.com/your-username/your-project-name.git
-  cd your-project-name
+  git clone https://github.com/Vipulpatil1704/todoReminder.git
+  cd todo
   ```
 
 ### 2. Create and Activate a Virtual Environment
@@ -46,8 +48,8 @@
 
 If you just want to test the project without setting up a new database, the project is preconfigured to use the following test and development database URLs:
 
-- **Test Database URL:** `mongodb+srv://test-database-url`
-- **Development Database URL:** `mongodb+srv://development-database-url`
+- **Test Database URL:** `mongodb+srv://user:user@cluster0.8byaj.mongodb.net/testdb?retryWrites=true&w=majority&appName=Cluster0`
+- **Development Database URL:** `mongodb+srv://user:user@cluster0.8byaj.mongodb.net/todo?retryWrites=true&w=majority&appName=Cluster0&authSource=admin`
 
 ### To Use Preconfigured Database
 1. Simply run the project as outlined above without changing the database settings.

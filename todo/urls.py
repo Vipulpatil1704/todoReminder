@@ -22,8 +22,8 @@ Including another URLconf
 # ]
 
 from django.urls import path, include
-from django.views.generic import TemplateView  # Import TemplateView here
+from django.views.generic import TemplateView  
 urlpatterns = [
     path('api/',include('tasks.urls')),
-    path('', TemplateView.as_view(template_name='index.html')),  # This will redirect to an 'index.html' template or a specific view
+    path('', TemplateView.as_view(template_name='index.html')),
 ]

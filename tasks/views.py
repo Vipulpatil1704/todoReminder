@@ -30,9 +30,9 @@ class TaskDetailView(APIView):
    
     def put(self, request, pk):
         try:
-            # task = Task.objects.get(pk=pk)
-            object_id = ObjectId(pk)  # Ensure pk is a valid ObjectId
-            task = Task.objects.get(_id=object_id)  # Use the `_id` field for MongoDB lookup
+           
+            object_id = ObjectId(pk)  
+            task = Task.objects.get(_id=object_id)  
             serializer = TaskSerializer(task, data=request.data)
             if serializer.is_valid():
                 serializer.save()
@@ -43,9 +43,9 @@ class TaskDetailView(APIView):
 
     def delete(self, request, pk):
         try:
-            # task = Task.objects.get(pk=pk)
-            object_id = ObjectId(pk)  # Ensure pk is a valid ObjectId
-            task = Task.objects.get(_id=object_id)  # Use the `_id` field for MongoDB lookup
+            
+            object_id = ObjectId(pk) 
+            task = Task.objects.get(_id=object_id)  
             task.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Task.DoesNotExist:
