@@ -100,7 +100,7 @@ if 'test' in sys.argv:
         'ENGINE': 'djongo',
         'NAME': 'testdb',  # Separate database for testing
         'CLIENT': {
-            'host': 'mongodb+srv://user:user@cluster0.8byaj.mongodb.net/testdb?retryWrites=true&w=majority&appName=Cluster0',
+            'host':os.getenv('DATABASE_TEST_URL') 
         },
     }
 
