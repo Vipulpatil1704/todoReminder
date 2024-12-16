@@ -1,0 +1,86 @@
+# Django Project Setup Guide
+
+## Steps to Run and Test the Project
+
+### 1. Clone the Project Repository
+* Clone the repository from GitHub:
+  ```bash
+  git clone https://github.com/your-username/your-project-name.git
+  cd your-project-name
+  ```
+
+### 2. Create and Activate a Virtual Environment
+* Set up a virtual environment:
+  ```bash
+  python -m venv venv
+  source venv/bin/activate  # On Windows: venv\\Scripts\\activate
+  ```
+
+### 3. Install Dependencies
+* Use the `requirements.txt` file to install all necessary libraries:
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+### 4. Run the Project
+* Start the Django development server:
+  ```bash
+  python manage.py runserver
+  ```
+
+### 5. Access the Project
+* Open your browser and go to:
+  ```
+  http://127.0.0.1:8000/
+  ```
+
+### 6. Test the Project
+* Run tests using:
+  ```bash
+  python manage.py test
+  ```
+
+---
+
+## Database Configuration Instructions
+
+If you just want to test the project without setting up a new database, the project is preconfigured to use the following test and development database URLs:
+
+- **Test Database URL:** `mongodb+srv://test-database-url`
+- **Development Database URL:** `mongodb+srv://development-database-url`
+
+### To Use Preconfigured Database
+1. Simply run the project as outlined above without changing the database settings.
+
+### To Set Up a New Database
+If you want to create and use your own database, follow these steps:
+
+1. **Update Database Configuration**
+   - Open `settings.py` and replace the `DATABASES` section with your database connection details:
+     ```python
+     DATABASES = {
+         'default': {
+             'ENGINE': 'djongo',
+             'NAME': 'your_database_name',
+             'CLIENT': {
+                 'host': 'your_host',
+                 'port': 27017,
+                 'username': 'your_username',
+                 'password': 'your_password',
+             }
+         }
+     }
+     ```
+
+2. **Apply Migrations**
+   - Set up the database schema:
+     ```bash
+     python manage.py migrate
+     ```
+
+3. **Run the Project**
+   - Start the server:
+     ```bash
+     python manage.py runserver
+     ```
+
