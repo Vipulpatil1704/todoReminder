@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'todo', 
         'CLIENT': {
-            'host': 'mongodb+srv://user:user@cluster0.8byaj.mongodb.net/todo?retryWrites=true&w=majority&appName=Cluster0'  
+            'host': os.getenv('DATABASE_URL')
         }
     }
 }
