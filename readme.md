@@ -11,32 +11,25 @@
   cd todo
   ```
 
-### 2. Create and Activate a Virtual Environment
-* Set up a virtual environment:
-  ```bash
-  python -m venv venv
-  source venv/bin/activate  # On Windows: venv\\Scripts\\activate
-  ```
-
-### 3. Install Dependencies
+### 2. Install Dependencies
 * Use the `requirements.txt` file to install all necessary libraries:
   ```bash
   pip install -r requirements.txt
   ```
 
-### 4. Run the Project
+### 3. Run the Project
 * Start the Django development server:
   ```bash
   python manage.py runserver
   ```
 
-### 5. Access the Project
+### 4. Access the Project
 * Open your browser and go to:
   ```
   http://127.0.0.1:8000/
   ```
 
-### 6. Test the Project
+### 5. Test the Project
 * Run tests using:
   ```bash
   python manage.py test
