@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'todo', 
         'CLIENT': {
-            'host': 'mongodb+srv://todoUser:todoUser@cluster0.8byaj.mongodb.net/todo?retryWrites=true&w=majority&appName=Cluster0'  
+            'host': 'mongodb+srv://user:user@cluster0.8byaj.mongodb.net/todo?retryWrites=true&w=majority&appName=Cluster0'  
         }
     }
 }
@@ -100,7 +100,7 @@ if 'test' in sys.argv:
         'ENGINE': 'djongo',
         'NAME': 'testdb',  # Separate database for testing
         'CLIENT': {
-            'host': 'mongodb+srv://todoUser:todoUser@cluster0.8byaj.mongodb.net/testdb?retryWrites=true&w=majority&appName=Cluster0',
+            'host': 'mongodb+srv://user:user@cluster0.8byaj.mongodb.net/testdb?retryWrites=true&w=majority&appName=Cluster0',
         },
     }
 
