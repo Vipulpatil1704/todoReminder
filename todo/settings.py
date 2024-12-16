@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 import sys
 from pathlib import Path
-
+from dotenv import load_dotenv
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-$-2i#5yw@w=-u_u4svzuprurb$0+#+5_#g^c!hokd2mkdog6%k
 DEBUG = True
 if 'test' in sys.argv:
     DEBUG = False
-
+DEBUG= False if os.getenv('DEBUG') == 'False' else True
 ALLOWED_HOSTS = ['*']
 
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -148,7 +150,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-
+if not DEBUG: 
+    STATIC_ROOT= os.path.join(BASE_DIR,'staticfiles')
+    STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
